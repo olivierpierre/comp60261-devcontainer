@@ -7,7 +7,7 @@ It is normally a paid feature but you can get access to it for free with a [stud
 
 Go to the [repository](https://github.com/olivierpierre/comp60261-devcontainer) page on GitHub, and click on `Use this template` then `Open in a codespace`:
 
-<img width="800" src="include/vscode-launch-devcontainer.png" href="include/vscode-launch-devcontainer.png">
+<img width="800" src="include/launch-codespace.png">
 
 Then simply navigate to the folder of the code snippet you wish to investigate (indicated in the lecture slide at the bottom of the code snippet in question).
 For example for the following snippet the file in question is `00-logistics/sample-code.c`:
