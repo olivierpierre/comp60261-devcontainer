@@ -3,6 +3,7 @@
 int f(int param) {
     int f_local = 0xcafe;
     /* ... */
+    return 0;
 }
 
 int main() {
