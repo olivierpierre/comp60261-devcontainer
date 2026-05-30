@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int i, choice = 1;
+    int i;
 
     for (i = 0; i < 5; i++) {
         printf("For loop iteration %d\n", i);
@@ -13,14 +13,5 @@ int main() {
         i++;
     }
 
-    switch(choice) {
-    case 1:
-        printf("choice is 1\n");
-        break;
-    case 2:
-        printf("choice is 2\n");
-        break;
-    default:
-        printf("choice is neither 1 nor 2\n");
-    }
+    return 0;
 }
