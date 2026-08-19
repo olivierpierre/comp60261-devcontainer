@@ -23,7 +23,7 @@ int main() {
     pid_t pid = fork();
 
     if (pid == 0) {
-        char *args[] = {"./te-comp", NULL};
+        char *args[] = {"./example-comp-pipe-lib", NULL};
         char *envp[] = {NULL};
         execve("./example-comp-pipe-lib", args, envp);
         return -1;
