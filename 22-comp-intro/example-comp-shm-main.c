@@ -24,12 +24,6 @@ int main() {
         return -1;
     }
 
-    // Set the size of the shared memory object
-    if (ftruncate(fd, sizeof(shm_data_t)) == -1) {
-        printf("ERROR: cannot set shared memory size\n");
-        return -1;
-    }
-
     shared = mmap(NULL, sizeof(shm_data_t), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if(!shared) {
         printf("ERROR: cannot map shared memory area\n");
