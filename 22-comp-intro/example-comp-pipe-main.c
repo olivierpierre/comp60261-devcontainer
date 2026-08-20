@@ -53,7 +53,10 @@ int main() {
     }
 
     printf("res: %d\n", result);
-
+    
+    // wait for the child to finish
+    wait(NULL);
+    
     close(send_fd);
     close(recv_fd);
     return 0;

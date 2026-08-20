@@ -24,7 +24,13 @@ int main() {
         return -1;
     }
 
-    shared = mmap(NULL, sizeof(shared_data_t), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    // Set the size of the shared memory object
+    if (ftruncate(fd, sizeof(shm_data_t)) == -1) {
+        printf("ERROR: cannot set shared memory size\n");
+        return -1;
+    }
+
+    shared = mmap(NULL, sizeof(shm_data_t), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     if(!shared) {
         printf("ERROR: cannot map shared memory area\n");
         return -1;
@@ -43,13 +49,12 @@ int main() {
         return -1;
     }
 
-    // give time for tbe library compartment to run the function and write
-    // the result in shared memory
-    usleep(200);
+    // wait for the child to finish
+    wait(NULL);
 
     printf("res: %d\n", shared->result);
     
-    munmap(shared);
+    munmap(shared, sizeof(shm_data_t));
     close(fd);
     return 0;
 }
